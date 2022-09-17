@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from store.views import BookListView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('', include('rest_framework.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    path('category/', include('store.category_urls')),
-    path('books/', include('store.book_urls')),
-    path('writer/', include('store.writer_urls')),
+    path('category/', include('category.urls')),
+    path('books/', include('book.urls')),
+    path('writer/', include('writer.urls')),
 ]
